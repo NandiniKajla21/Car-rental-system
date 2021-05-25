@@ -1,0 +1,30 @@
+
+-- --------------------------------------------------------
+CREATE DATABASE cab_data;
+--
+
+-- Table structure for table `users`
+--
+
+
+CREATE TABLE `users` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) DEFAULT NULL,
+  `user_X` int NOT NULL,
+  `user_Y` int NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `id` (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `user_X`, `user_Y`) VALUES
+(1, 'l', 3, 4);
+INSERT INTO `users` (`id`, `name`, `user_X`, `user_Y`) VALUES
+(2, 'r', 7, 9);
+INSERT INTO `users` (`id`, `name`, `user_X`, `user_Y`) VALUES
+(3, 's', 10, 17);
+INSERT INTO `users` (`id`, `name`, `user_X`, `user_Y`) VALUES
+(4, 'h', 30, 79);

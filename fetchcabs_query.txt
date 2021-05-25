@@ -1,0 +1,15 @@
+//query to fetch the nearest cabs form the users location. we just need to specify the user id i.e its location (x,y) and the code will show the results of 5 nearest cabs.
+//this code is based on  Spherical Cosine Law, or the Haversine Formula, for finding the shortest distance from the user
+
+SELECT zip, primary_city, latitude, longitude,
+      111.045* DEGREES(ACOS(LEAST(1.0, COS(RADIANS(latpoint))
+                 * COS(RADIANS(latitude))
+                 * COS(RADIANS(longpoint) - RADIANS(longitude))
+                 + SIN(RADIANS(latpoint))
+                 * SIN(RADIANS(latitude))))) AS distance_in_km
+ FROM zip
+ JOIN (
+     SELECT  users.user_x as latpoint, users.user_y as longpoint from users where id=3
+   ) AS p ON 1=1
+ORDER BY distance_in_km
+ LIMIT 5;
